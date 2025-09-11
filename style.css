@@ -1,29 +1,8 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #f9f9f9;
-    color: #222;
-}
-
-#container {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-    background: #fff;
-    padding: 1rem;
-}
-
-
 /* Header + nav */
 
 header {
     background: #003366;
+    /* navy blue */
     color: #fff;
     padding: 1rem;
 }
@@ -42,22 +21,133 @@ nav a {
     color: #fff;
     text-decoration: none;
     padding: .25rem .5rem;
+    position: relative;
 }
 
-nav a:hover,
-nav a.active {
+nav a:hover {
     background: #0055a5;
+    /* lighter blue */
     border-radius: 4px;
 }
 
 
-/* Headings */
+/* Active link styling */
 
-h2 {
-    color: #003366;
-    margin: 1rem 0 .5rem;
+nav a.active {
+    background: #0055a5;
+    /* same hover blue */
+    border-radius: 4px;
+    font-weight: bold;
 }
 
-h3 {
-    margin-top: 1rem;
+
+/* Red underline accent for active */
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 3px;
+    background: #cc0000;
+    /* red accent */
+    border-radius: 2px;
+}
+
+
+/* --- Layout polish --- */
+
+main {
+    padding: 1rem 0 2rem;
+}
+
+h2 {
+    margin: 1.25rem 0 .75rem;
+}
+
+
+/* --- Nav: keep blue + red accent and clear active state --- */
+
+nav a {
+    position: relative;
+}
+
+nav a.active,
+nav a:hover {
+    background: #0055a5;
+    border-radius: 4px;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 3px;
+    background: #cc0000;
+    border-radius: 2px;
+}
+
+
+/* --- Contact form grid (labels left, fields right) --- */
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: .75rem 1rem;
+    max-width: 780px;
+    align-items: center;
+}
+
+.contact-form label {
+    justify-self: end;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: .55rem .6rem;
+    border: 1px solid #c7c7c7;
+    border-radius: 4px;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+
+/* Put the button under the inputs (right column) */
+
+.contact-form button {
+    grid-column: 2 / 3;
+    justify-self: start;
+    padding: .6rem 1.1rem;
+    background: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #0055a5;
+}
+
+
+/* --- Mobile: stack everything --- */
+
+@media (max-width: 700px) {
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+    .contact-form label {
+        justify-self: start;
+    }
+    .contact-form button {
+        grid-column: 1 / -1;
+    }
 }
