@@ -144,9 +144,11 @@ nav a.active::after {
     .contact-form {
         grid-template-columns: 1fr;
     }
+
     .contact-form label {
         justify-self: start;
     }
+
     .contact-form button {
         grid-column: 1 / -1;
     }
@@ -197,14 +199,15 @@ nav a.active::after {
     right: 8%;
     bottom: 28%;
     padding: .6rem .8rem;
-    background: rgba(255,255,255,.92);
+    background: rgba(255, 255, 255, .92);
     color: #111;
-    border-left: 4px solid #cc0000; /* red accent */
+    border-left: 4px solid #cc0000;
+    /* red accent */
     border-radius: 4px;
     visibility: hidden;
     opacity: 0;
     transition: opacity .15s ease;
-    box-shadow: 0 6px 16px rgba(0,0,0,.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .15);
 }
 
 .photo:hover .description {
@@ -215,4 +218,54 @@ nav a.active::after {
 .photo:hover img {
     transform: scale(1.01);
     transition: transform .15s ease;
+}
+
+#infoOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s ease;
+    display: grid;
+    place-items: center;
+    z-index: 1000;
+}
+
+#infoOverlay.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+#infoBox {
+    width: min(560px, 90vw);
+    background: rgba(0, 0, 0, .88);
+    color: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .45);
+    border-top: 4px solid #cc0000;
+    /* red accent */
+}
+
+#infoBox h3 {
+    margin: 0 0 .5rem;
+    font-size: 1.25rem;
+}
+
+#infoBox p {
+    margin: .25rem 0 1rem;
+    line-height: 1.5;
+}
+
+#infoClose {
+    display: inline-block;
+    color: #ffd54d;
+    /* warm yellow like the slide */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#infoClose:hover {
+    text-decoration: underline;
 }
