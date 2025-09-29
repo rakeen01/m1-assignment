@@ -179,6 +179,47 @@ nav a.active::after {
     margin-top: 1rem;
 }
 
+.contact-form--stacked input,
+.contact-form--stacked select,
+.contact-form--stacked textarea {
+    box-sizing: border-box;
+    /* prevents overflow */
+    width: 100%;
+    max-width: 100%;
+}
+
+.contact-form--stacked label {
+    margin: .6rem 0 .35rem;
+    /* tighter vertical spacing */
+}
+
+/* Compact radio row */
+.contact-form--stacked .inline {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    /* tighter gap between radios */
+    margin-bottom: .4rem;
+}
+
+.contact-form--stacked .inline label {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    margin: 0;
+    /* remove extra margins */
+}
+
+.contact-form--stacked fieldset {
+    padding: 1rem 1rem 1.2rem;
+    /* avoid clipping controls */
+}
+
+.contact-form--stacked button {
+    padding: .55rem 1rem;
+    /* better height */
+}
+
 /* reveal rows (full-width, under the select) */
 .reveal {
     margin-top: .25rem;
