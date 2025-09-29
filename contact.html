@@ -27,30 +27,51 @@
                 Have questions about programs or admissions? Use the form below to reach us.
             </p>
 
-            <form action="#" method="post" class="contact-form">
-                <label for="name">Full Name</label>
-                <input id="name" type="text" name="name" required>
+            <form action="#" method="post" class="contact-form contact-form--stacked">
+                <fieldset>
+                    <legend>User personal information</legend>
 
-                <label for="email">Email</label>
-                <input id="email" type="email" name="email" required>
+                    <label for="full-name">Enter your full name</label>
+                    <input id="full-name" type="text" name="name" required>
 
-                <label for="topic">Topic</label>
-                <select id="topic" name="topic">
-          <option>Admissions</option>
-          <option>Programs</option>
-          <option>Community Engagement</option>
-        </select>
+                    <label>Select your gender</label>
+                    <div class="inline">
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                    </div>
 
-                <label for="msg">Message</label>
-                <textarea id="msg" name="message" rows="4"></textarea>
+                    <label for="contact-method">How should we contact you?</label>
+                    <select id="contact-method">
+                        <option value="">Select One</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                    </select>
 
-                <button type="submit">Submit</button>
+                    <!-- reveal boxes (hidden on load) -->
+                    <div id="box-email" class="reveal hidden">
+                        <label for="email-input">Enter your email</label>
+                        <input id="email-input" type="email" placeholder="name@example.com">
+                    </div>
+
+                    <div id="box-phone" class="reveal hidden">
+                        <label for="phone-input">Enter your phone</label>
+                        <input id="phone-input" type="tel" placeholder="+1 555 123 4567">
+                    </div>
+
+                    <label for="reason">Tell us the reason of your visit today:</label>
+                    <textarea id="reason" rows="4"></textarea>
+
+                    <button type="submit">Sign up</button>
+                </fieldset>
             </form>
+
+            <script src="contact.js"></script>
 
             <h2>Quick Links</h2>
             <ul>
                 <li><a href="https://govtbangabandhucollegedhaka.edu.bd/" target="_blank">Official Website</a></li>
-                <li><a href="https://bn.wikipedia.org/wiki/%E0%A6%AA%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A6%AC%E0%A7%80_%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%BF_%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C,_%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE" target="_blank">Wikipedia (Bangla)</a></li>
+                <li><a href="https://bn.wikipedia.org/wiki/%E0%A6%AA%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A6%AC%E0%A7%80_%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%BF_%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C,_%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE"
+                        target="_blank">Wikipedia (Bangla)</a></li>
             </ul>
         </main>
 

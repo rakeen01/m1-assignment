@@ -137,6 +137,57 @@ nav a.active::after {
     background: #0055a5;
 }
 
+.contact-form--stacked {
+    display: block;
+    max-width: 720px;
+}
+
+.contact-form--stacked fieldset {
+    border: 1px solid #c7c7c7;
+    border-radius: 6px;
+    padding: 1rem 1rem 1.25rem;
+}
+
+.contact-form--stacked legend {
+    padding: 0 .5rem;
+    font-weight: 600;
+}
+
+.contact-form--stacked label {
+    display: block;
+    margin: .9rem 0 .35rem;
+    justify-self: initial;
+    /* override grid rule from .contact-form */
+}
+
+.contact-form--stacked .inline {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.contact-form--stacked input,
+.contact-form--stacked select,
+.contact-form--stacked textarea {
+    width: 100%;
+    padding: .55rem .6rem;
+    border: 1px solid #c7c7c7;
+    border-radius: 4px;
+}
+
+.contact-form--stacked button {
+    margin-top: 1rem;
+}
+
+/* reveal rows (full-width, under the select) */
+.reveal {
+    margin-top: .25rem;
+}
+
+.hidden {
+    display: none;
+}
+
 
 /* --- Mobile: stack everything --- */
 
@@ -261,7 +312,7 @@ nav a.active::after {
 #infoClose {
     display: inline-block;
     color: #ffd54d;
-    /* warm yellow like the slide */
+    /* warm yellow */
     text-decoration: none;
     font-weight: 700;
 }
